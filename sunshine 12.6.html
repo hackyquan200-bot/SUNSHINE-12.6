@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KỶ NIỆM 12.6 - SUNSHINE</title>
+
+<style>
+:root {
+    --main-green-100: #f0fdf4;
+    --main-green-200: #dcfce7;
+    --main-green-300: #bbf7d0;
+    --main-green-400: #86efac;
+    --main-green-500: #4ade80;
+    --main-green-600: #22c55e;
+    --main-green-700: #16a34a;
+    --main-green-800: #15803d;
+    --main-green-900: #166534;
+    --pure-white: #ffffff;
+    --dark-slate: #0f172a;
+    --soft-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: var(--main-green-100);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--main-green-900);
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--main-green-600);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text-primary {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--main-green-700);
+    letter-spacing: 1px;
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--main-green-900);
+    font-weight: 700;
+    font-size: 14px;
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+
+.nav-item-link:hover {
+    color: var(--main-green-600);
+    background-color: var(--main-green-200);
+    border-radius: 30px;
+}
+
+.hero-banner-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image/hhh.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.hero-title-main {
+    font-size: 120px;
+    color: var(--pure-white);
+    font-weight: 900;
+    margin-bottom: 0px;
+    text-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-tagline {
+    font-size: 24px;
+    color: var(--pure-white);
+    letter-spacing: 15px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.main-content-area {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-white-card {
+    width: 92%;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 120px;
+    background-color: var(--pure-white);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 60px;
+    box-shadow: var(--soft-shadow);
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.heading-secondary {
+    font-size: 55px;
+    font-weight: 900;
+    color: var(--main-green-800);
+}
+
+.member-grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.member-item-card {
+    width: 320px;
+    background-color: #fcfcfc;
+    border-radius: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-bottom-width: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: #f1f5f9;
+    transition: 0.5s;
+}
+
+.member-item-card:hover {
+    transform: translateY(-20px);
+    border-bottom-color: var(--main-green-600);
+}
+
+.member-photo-frame {
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    border: 6px solid var(--main-green-300);
+    overflow: hidden;
+}
+
+.member-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-display-name {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.member-role-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--main-green-100);
+    color: var(--main-green-700);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.gallery-masonry-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.gallery-photo-item {
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.gallery-photo-item:hover img {
+    transform: scale(1.15);
+}
+
+.col-span-2 { grid-column: span 2; }
+.row-span-2 { grid-row: span 2; }
+
+.timeline-vertical-line {
+    margin-top: 50px;
+    padding-left: 50px;
+    border-left: 6px solid var(--main-green-400);
+}
+
+.timeline-event-block {
+    position: relative;
+    margin-bottom: 80px;
+    padding-left: 30px;
+}
+
+.timeline-event-block::before {
+    content: "";
+    position: absolute;
+    left: -63px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-green-600);
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.video-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.video-wrapper-box {
+    background-color: #000;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 10px solid white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.video-wrapper-box video {
+    width: 100%;
+    display: block;
+}
+
+.custom-data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.custom-data-table th {
+    background-color: var(--main-green-800);
+    color: white;
+    padding: 25px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.custom-data-table td {
+    background-color: #f8fafc;
+    padding: 25px;
+    font-weight: 600;
+}
+
+#image-id-01 { transition-delay: 0.1s; }
+#image-id-02 { transition-delay: 0.2s; }
+#image-id-03 { transition-delay: 0.3s; }
+#image-id-04 { transition-delay: 0.4s; }
+#image-id-05 { transition-delay: 0.5s; }
+#image-id-06 { transition-delay: 0.6s; }
+#image-id-07 { transition-delay: 0.7s; }
+#image-id-08 { transition-delay: 0.8s; }
+#image-id-09 { transition-delay: 0.9s; }
+#image-id-10 { transition-delay: 1.0s; }
+#image-id-11 { transition-delay: 1.1s; }
+#image-id-12 { transition-delay: 1.2s; }
+#image-id-13 { transition-delay: 1.3s; }
+#image-id-14 { transition-delay: 1.4s; }
+#image-id-15 { transition-delay: 1.5s; }
+#image-id-16 { transition-delay: 1.6s; }
+#image-id-17 { transition-delay: 1.7s; }
+#image-id-18 { transition-delay: 1.8s; }
+#image-id-19 { transition-delay: 1.9s; }
+#image-id-20 { transition-delay: 2.0s; }
+
+footer {
+    background-color: var(--main-green-900);
+    color: white;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    text-align: center;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.footer-logo-large {
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.falling-leaf-object {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    font-size: 25px;
+    animation-name: leaf-fall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes leaf-fall {
+    from { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="nav-logo-box">
+            <span class="logo-text-primary">SUNSHINE 12.6</span>
+        </div>
+        <nav>
+            <ul class="nav-menu-wrapper">
+                <li><a href="#hero-banner" class="nav-item-link">TRANG CHỦ</a></li>
+                <li><a href="#team-section" class="nav-item-link">THÀNH VIÊN</a></li>
+                <li><a href="#dalat-section" class="nav-item-link">ĐÀ LẠT 2026</a></li>
+                <li><a href="#fair-section" class="nav-item-link">HỘI CHỢ</a></li>
+                <li><a href="#music-section" class="nav-item-link">VĂN NGHỆ</a></li>
+                <li><a href="#diary-section" class="nav-item-link">NHẬT KÝ</a></li>
+                <li><a href="#contact-footer" class="nav-item-link">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section id="hero-banner" class="hero-banner-section">
+        <h1 class="hero-title-main">SUNSHINE 12.6</h1>
+        <p class="hero-tagline">HÀNH TRÌNH RỰC RỠ CỦA TUỔI THANH XUÂN</p>
+    </section>
+
+    <div class="main-content-area">
+
+        <section id="team-section" class="section-white-card">
+            <div class="section-title-wrapper">
+                <h2 class="heading-secondary">THÀNH VIÊN NHÓM</h2>
+            </div>
+            <div class="member-grid-container">
+                <div class="member-item-card">
+                    <div class="member-photo-frame"><img src="Image/ngocanh.jpg"></div>
+                    <div class="member-display-name">HUỲNH VÕ NGỌC ANH</div>
+                    <div class="member-role-badge">STT 01</div>
+                    <p style="margin-top: 20px; font-size: 14px;">Lên ý tưởng, thiết kế, chỉnh sửa nội dung.</p>
+                </div>
+                <div class="member-item-card">
+                    <div class="member-photo-frame"><img src="Image/baothy.jpg"></div>
+                    <div class="member-display-name">PHẠM TRẦN BẢO THY</div>
+                    <div class="member-role-badge">STT 34</div>
+                    <p style="margin-top: 20px; font-size: 14px;">Lên ý tưởng, thiết kế, chỉnh sửa nội dung.</p>
+                </div>
+                <div class="member-item-card">
+                    <div class="member-photo-frame"><img src="Image/thuyhoa.jpg"></div>
+                    <div class="member-display-name">TRẦN THỊ THÚY HÒA</div>
+                    <div class="member-role-badge">STT 10</div>
+                    <p style="margin-top: 20px; font-size: 14px;">Soạn nội dung, thiết kế, hình ảnh.</p>
+                </div>
+                <div class="member-item-card">
+                    <div class="member-photo-frame"><img src="Image/hoanganh.jpg"></div>
+                    <div class="member-display-name">NGUYỄN HOÀNG ANH</div>
+                    <div class="member-role-badge">STT 02</div>
+                    <p style="margin-top: 20px; font-size: 14px;">Soạn nội dung, thiết kế, hình ảnh.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dalat-section" class="section-white-card">
+            <div class="section-title-wrapper">
+                <h2 class="heading-secondary">KỶ NIỆM ĐÀ LẠT</h2>
+            <div class="gallery-masonry-layout">
+    <div class="gallery-photo-item col-span-2 row-span-2" id="image-id-01">
+        <img src="Image/DALAT.jpg">
+    </div>
+    <div class="gallery-photo-item" id="image-id-02">
+        <img src="Image/DALAT1.jpg">
+    </div>
+    <div class="gallery-photo-item" id="image-id-03">
+        <img src="Image/DALAT2.jpg">
+    </div>
+    <div class="gallery-photo-item row-span-2" id="image-id-04">
+        <img src="Image/DALAT3.jpg">
+    </div>
+    <div class="gallery-photo-item" id="image-id-05">
+        <img src="Image/DALAT4.jpg" alt="DALAT">
+    </div>
+    <div class="gallery-photo-item" id="image-id-06">
+        <img src="Image/DALAT5.jpg">
+    </div>
+    <div class="gallery-photo-item col-span-2">
+        <img src="Image/DALAT6.jpg">
+    </div>
+    <div class="gallery-photo-item">
+        <img src="Image/DALAT7.jpg">
+    </div>
+</div>
+            </div>
+        </section>
+
+        <section id="fair-section" class="section-white-card">
+            <div class="section-title-wrapper">
+                <h2 class="heading-secondary">HỘI CHỢ ẨM THỰC</h2>
+            </div>
+            <div class="gallery-masonry-layout">
+                <div class="gallery-photo-item col-span-2" id="fair-img-01"><img src="Image/HC7.jpg"></div>
+                <div class="gallery-photo-item" id="fair-img-02"><img src="Image/HC6.jpg"></div>
+                <div class="gallery-photo-item" id="fair-img-03"><img src="Image/HC2.jpg"></div>
+                <div class="gallery-photo-item row-span-2" id="fair-img-04"><img src="image/HC1.jpg"></div>
+                <div class="gallery-photo-item" id="fair-img-05"><img src="image/HC.jpg"></div>
+                <div class="gallery-photo-item" id="fair-img-06"><img src="image/HC5.jpg"></div>
+            </div>
+            <div style="margin-top: 50px;">
+                <table class="custom-data-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm bán chạy</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng đã bán</th>
+                            <th>Đánh giá khách hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HOÀNG THÁNH</td><td>10.000 VNĐ</td><td>1 ĐỐNG</td><td>GÚT CHÓP</td></tr>
+                        <tr><td>RAU CÂU DỪA</td><td>5.000 VNĐ</td><td>40 PHẦN</td><td>MÁT LẠNH</td></tr>
+                        <tr><td>BÁNH TRÁNG CUỘN</td><td>20.000 VNĐ</td><td>30 PHẦN</td><td>SIÊU CUỐN</td></tr>
+                        <tr><td>NƯỚC SÂM HẠT CHIA</td><td>10.000 VNĐ</td><td>50 LY</td><td>ĐỈNH CỦA ĐỈNH</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="music-section" class="section-white-card">
+            <div class="section-title-wrapper">
+                <h2 class="heading-secondary">MỪNG ĐẢNG MỪNG XUÂN </h2>
+            </div>
+            <div class="video-container-grid">
+                <div class="video-wrapper-box">
+                    <video controls><source src="Image/v1.mp4" type="video/mp4"></video>
+                    <div style="padding: 20px; text-align: center; font-weight: bold;">Tiết mục nhảy hiện đại </div>
+                </div>
+                <div class="video-wrapper-box">
+                    <video controls><source src="Image/v2.mp4" type="video/mp4"></video>
+                    <div style="padding: 20px; text-align: center; font-weight: bold;">Tiết mục đơn ca </div>
+                </div>
+            </div>
+            <div class="gallery-masonry-layout" style="margin-top: 40px;">
+                <div class="gallery-photo-item"><img src="Image/VN.jpg"></div>
+                <div class="gallery-photo-item"><img src="Image/VN1.jpg"></div>
+                <div class="gallery-photo-item"><img src="Image/VN2.jpg"></div>
+                <div class="gallery-photo-item"><img src="Image/VN3.jpg"></div>
+            </div>
+        </section>
+
+        <section id="diary-section" class="section-white-card">
+            <div class="section-title-wrapper">
+                <h2 class="heading-secondary">DÒNG THỜI GIAN</h2>
+            </div>
+            <div class="timeline-vertical-line">
+                <div class="timeline-event-block">
+                    <h3 style="color: var(--main-green-700);">Tháng 09/2026</h3>
+                    <p>Ngày đầu tiên bước chân vào lớp 12.6, những dự định mới chính thức bắt đầu dưới mái trường Huỳnh Văn Nghệ.</p>
+                </div>
+                
+                <div class="timeline-event-block">
+                    <h3 style="color: var(--main-green-700);">Tháng 01/2026</h3>
+                    <p>Chuyến đi Đà Lạt định mệnh. 3 ngày 2 đêm cùng nhau ăn, ngủ, chơi và tạo nên những ký ức không bao giờ quên.</p>
+                </div>
+                <div class="timeline-event-block">
+                    <h3 style="color: var(--main-green-700);">Tháng 02/2026</h3>
+                    <p>Hội chợ ẩm thực lớp. Gian hàng "NHÂN SINH QUÁN" chính thức ra mắt và gây tiếng vang lớn trong toàn trường.</p>
+                </div>
+                <div class="timeline-event-block">
+                    <h3 style="color: var(--main-green-700);">Tháng 1/2026</h3>
+                    <p>Đại hội Văn nghệ chào mừng mừng đảng mừng xuân. Nhóm chúng mình đã cùng nhau tập luyện miệt mài hàng đêm.</p>
+                </div>
+                
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<footer id="contact-footer">
+    <div class="footer-logo-large">SUNSHINE 12.6</div>
+    <p style="font-size: 20px; opacity: 0.8; max-width: 800px; margin: 0 auto 40px;">Trang web kỷ niệm này là món quà dành tặng cho tất cả các thành viên lớp 12.6 niên khóa 2023 - 2026. Cảm ơn vì đã cùng nhau làm nên một thời thanh xuân tuyệt vời nhất.</p>
+    <div style="font-size: 14px; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
+        © 2026 SUNSHINE Team - Designed for HUỲNH VÕ NGỌC ANH/ PHẠM TRẦN BẢO THY/ TRẦN THỊ THÚY HÒA/ NGUYỄN HOÀNG ANH <br>
+         School: THPT Huynh Van Nghe
+    </div>
+</footer>
+
+<script>
+    function generateLeaf() {
+        const leaf = document.createElement('div');
+        leaf.innerHTML = '🌿';
+        leaf.className = 'falling-leaf-object';
+        leaf.style.left = Math.random() * 100 + 'vw';
+        leaf.style.top = '-50px';
+        leaf.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        leaf.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        document.body.appendChild(leaf);
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    }
+    setInterval(generateLeaf, 400);
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.height = '70px';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        } else {
+            header.style.height = '100px';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        }
+    });
+</script>
+
+</body>
+</html>
